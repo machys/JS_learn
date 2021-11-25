@@ -3,6 +3,7 @@ class School{
         this._name=name;
         this._level=level;
         this._numberOfStudents=numberOfStudents;
+    
     }
     get name(){
         return this._name;
@@ -13,12 +14,14 @@ class School{
     get numberOfStudents(){
         return this._numberOfStudents;
     }
-    numberOfStudents(numOfStudents){
+    set numberOfStudents(numOfStudents){
+        
        if (typeof(numOfStudents) === "number"){
             this._numberOfStudents=numOfStudents;
         }else{
             console.log('Invalid input: numberOfStudents must be set to a Number.');
             }
+            
     }
     quickFacts(){
         console.log(`${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`);
@@ -77,7 +80,7 @@ const mid =new Middle("zase nazev","middle",150)
 //console.log(a);
 
 const high =new High("cosi","high",13,["a","b"])
-prim.numberOfStudents("120")
+prim.numberOfStudents=120;
 prim.quickFacts();
 
 const catalog = new SchoolCatalog([prim,mid,high]);
